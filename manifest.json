@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "LectureSurfer",
+    "version": "1.0",
+    "description": "LectureSurfer is a tool for students to listen to lectures with a background of their choice that helps them focus.",
+    "permissions": [
+        "tabCapture",
+        "activeTab",
+        "storage",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/icon16.png",
+            "32": "/images/icon32.png",
+            "48": "/images/icon48.png",
+            "128": "/images/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "icons": { "16": "/images/icon16.png", "32": "/images/icon32.png", "48": "/images/icon48.png", "128": "/images/icon128.png" }
+}
