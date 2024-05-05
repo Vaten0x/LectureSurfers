@@ -7,7 +7,7 @@
         "tabCapture",
         "activeTab",
         "storage",
-        "tabs"
+        "desktopCapture"
     ],
     "background": {
         "service_worker": "background.js"
