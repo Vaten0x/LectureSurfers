@@ -10,7 +10,7 @@
         top: 0,
         left: 0
       });
-      // chrome.tabs.create({url: 'index.html'});
+      // chrome.tabs.create({url: 'popup.html'});
     });
     
     console.log("background is active");
@@ -46,5 +46,4 @@
             chrome.runtime.setUninstallURL("https://forms.gle/SA7shHbtMaFYczxv7");
         }
       });
-    })()
-    ;
+    })();
