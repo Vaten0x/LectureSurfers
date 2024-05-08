@@ -10,7 +10,8 @@
         "activeTab",
         "storage",
         "desktopCapture",
-        "tabs"
+        "tabs",
+        "scripting"
     ],
     "host_permissions": [
         "<all_urls>"
@@ -34,5 +35,9 @@
             "js": ["content.js"]
         }
     ],
-    "icons": { "16": "/images/icon16.png", "32": "/images/icon32.png", "48": "/images/icon48.png", "128": "/images/icon128.png" }
+    "icons": { 
+        "16": "/images/icon16.png", 
+        "32": "/images/icon32.png", 
+        "48": "/images/icon48.png", 
+        "128": "/images/icon128.png" }
 }
