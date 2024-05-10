@@ -3,15 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Subtitle Overlay Extension</title>
+    <title>LectureSurfer</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Video Subtitle Overlay</h1>
-        <button id="startBtn">Start Capturing</button>
-        <div id="status">Ready to capture audio.</div>
+  <div class="skateboard_gif">
+    <div class="wrapper">
+        <div class="human">
+        <div class="human__head">
+            <div class="human__face"><span></span>
+            <div class="human__hair">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="human__hood"></div>
+            </div>
+            <div class="human__body">
+            <div>
+                <div></div>
+            </div>
+            <div class="human__reg human__reg--left">
+                <div>
+                <div>
+                    <div></div>
+                </div>
+                </div>
+            </div>
+            <div class="human__reg human__reg--right">
+                <div>
+                <div>
+                    <div></div>
+                </div>
+                </div>
+            </div>
+            <div class="human__arm human__arm--left">
+                <div>
+                <div>
+                    <div></div>
+                </div>
+                </div>
+            </div>
+            <div class="human__arm human__arm--right">
+                <div>
+                <div>
+                    <div></div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="board">
+        <div class="board__body board__body--back">
+            <div class="board__side board__side--left"></div>
+            <div class="board__center"></div>
+            <div class="board__side board__side--right"></div>
+        </div>
+        <div class="board__body board__body--front">
+            <div class="board__side board__side--left"></div>
+            <div class="board__center"></div>
+            <div class="board__side board__side--right"></div>
+        </div>
+        <div class="board__tires">
+            <div class="board__tire"><span></span></div>
+            <div class="board__tire"><span></span></div>
+            <div class="board__tire"><span></span></div>
+            <div class="board__tire"><span></span></div>
+        </div>
+        </div>
+        <div class="shadow"></div>
+        <div class="wind">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
     </div>
+  </div> 
+  <div class="container">
+    <h1>LectureSurfer</h1>
+    <button id="start">Start Capturing your tab</button>
+    <button id="stop">Stop</button>
+    <button id="clear">Clear</button>
+    <div id="status">Share your wanted tab audio and focus!</div>
+    <p id="transcript"></p>
     <script src="popup.js"></script>
+  </div>
 </body>
 </html>
