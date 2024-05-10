@@ -4,13 +4,16 @@ body {
   font-family: "Cute Font", cursive;
   margin: 0;
   padding: 0;
-  background: #9fdbd1;
   transform-style: preserve-3d;
   perspective: 600px;
   justify-content: center;
   align-items: center;
   width: 300px;
   height: 600px;
+  background-image: url('images/backgroundImg.jpg');
+  background-size: cover; /* This will ensure the image covers the entire background */
+  background-repeat: no-repeat; /* This prevents the image from repeating */
+  background-position: center; /* This centers the image */
 }
 
 .wrapper {
@@ -18,11 +21,13 @@ body {
   height: 300px;
   margin: auto;
   top: calc(50% - 150px);
-  left: calc(50% - 50px);
+  left: calc(50% - 20px);
 }
+
 * {
   position: relative;
 }
+
 *:before, *:after {
   position: absolute;
   content: "";
@@ -34,7 +39,7 @@ body {
   width: 150px;
   height: 300px;
   z-index: 10;
-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .container {
@@ -42,7 +47,8 @@ border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  top: 100px;
+  top: 90px;
+  opacity: 0.93;
 }
 
 h1 {

@@ -32,7 +32,9 @@
                     chrome.storage.local.set({ transcript: data.transcript + ' ' + transcript });
 
                     // Throws error when popup is closed, so this swallows the errors.
-                    chrome.runtime.sendMessage({ message: 'transcriptavailable' }).catch(err => ({}));
+                    chrome.runtime.sendMessage({ message: 'transcriptavailable' }).catch(err => {
+                        console.error('Message sending failed:', err);
+                    });
                 });
             }
         };

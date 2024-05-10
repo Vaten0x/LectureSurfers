@@ -24,5 +24,11 @@
     },
     "background": {
         "service_worker": "background.js"
-    }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["images/backgroundImg.jpg"],
+            "matches": ["<all_urls>"]
+        }
+    ]
 }
