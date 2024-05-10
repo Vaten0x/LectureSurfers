@@ -13,7 +13,7 @@
         const recorder = new MediaRecorder(dest.stream, { mimeType: 'audio/webm' });
 
         try {
-            socket = new WebSocket('wss://api.deepgram.com/v1/listen?model=general-enhanced', ['token', '55be89c3245dcfcdf3887b90502d0aa29d3fb035']);
+            socket = new WebSocket('wss://api.deepgram.com/v1/listen?model=general-enhanced', ['token', APIKEY]);
         } catch (e) {
             return alert('Failed to connect to transcription server. Please try again later.');
         }
