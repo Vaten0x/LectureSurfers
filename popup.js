@@ -27,10 +27,7 @@ document.getElementById('start-subway').addEventListener('click', async function
         while (true) {
             const tab = await getCurrentTab();
             if (tab) {
-                chrome.scripting.executeScript({
-                    target: { tabId: tab.id },
-                    files: ["content.js"]
-                })
+                executeScriptBasedOnOption(tab.id);
                 break;
             }
         }
@@ -46,10 +43,7 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
         while (true) {
             const tab = await getCurrentTab();
             if (tab) {
-                chrome.scripting.executeScript({
-                    target: { tabId: tab.id },
-                    files: ["content.js"]
-                })
+                executeScriptBasedOnOption(tab.id);
                 break;
             }
         }
@@ -87,4 +81,22 @@ async function getCurrentTab() {
     const queryOptions = { active: true, lastFocusedWindow: true }
     const [tab] = await chrome.tabs.query(queryOptions)
     return tab
+}
+
+//Choose which script to execute based on the selected option
+function executeScriptBasedOnOption(tabId) {
+    let scriptFile = '';
+
+    if (selectedOption === 'chrome-audio') {
+        scriptFile = 'content.js';
+    } else if (selectedOption === 'mic-audio') {
+        scriptFile = 'content-speech.js';
+    }
+
+    if (scriptFile) {
+        chrome.scripting.executeScript({
+            target: { tabId: tabId },
+            files: [scriptFile]
+        });
+    }
 }

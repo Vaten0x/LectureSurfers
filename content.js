@@ -1,3 +1,5 @@
+// Description: This script is for Chrome Tab Audio
+
 (function() {
     let socket;
 
