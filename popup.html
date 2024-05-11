@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LectureSurfer</title>
+    <title>LectureSurfers</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -83,11 +83,28 @@
   </div> 
   <div class="container">
     <h1>LectureSurfer</h1>
-    <button id="start">Start Capturing your tab</button>
+    
+    <!-- These are the options for the background gameplay: -->
+    <div class="button-container">
+        <button id="start-subway">Subway Surfers</button> 
+        <button id="start-minecraft">Minecraft Parkour</button>
+    </div>
+
+    <!-- Removed buttons for now, might in need for later -->
     <!-- <button id="stop">Stop</button> -->
-    <button id="clear">Clear</button>
-    <div id="status">Share your wanted tab audio and focus!</div>
+    <!-- <button id="clear">Clear</button> -->
+
+    <!-- These are the options for the audio source: -->
+    <div class="option-container">
+        <input type="radio" id="chrome-audio" name="audio-option" value="chrome-audio" class="option-input">
+        <label for="chrome-audio" class="option-label">Chrome Tab Audio</label>
+
+        <input type="radio" id="mic-audio" name="audio-option" value="mic-audio" class="option-input">
+        <label for="mic-audio" class="option-label">Speech (Mic)</label>
+    </div>
+
     <p id="transcript"></p>
+    <a href="https://forms.gle/2gNdC8Q7sEBv3kYu9" id="status" target="_blank" class="text-button">Suggestions?</a>
     <script src="popup.js"></script>
   </div>
 </body>
