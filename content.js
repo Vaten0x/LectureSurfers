@@ -13,7 +13,7 @@
         const recorder = new MediaRecorder(dest.stream, { mimeType: 'audio/webm' });
 
         try {
-            socket = new WebSocket('wss://api.deepgram.com/v1/listen?model=general-enhanced', ['token', APIKEY]);
+            socket = new WebSocket('wss://api.deepgram.com/v1/listen?model=general-enhanced', ['token', '55be89c3245dcfcdf3887b90502d0aa29d3fb035']);
         } catch (e) {
             return alert('Failed to connect to transcription server. Please try again later.');
         }
@@ -24,28 +24,41 @@
 
         socket.onopen = () => { recorder.start(250); };
 
-        socket.onmessage = msg => {
-            const { transcript } = JSON.parse(msg.data).channel.alternatives[0];
-            if (transcript) {
-                console.log(transcript);
-                chrome.storage.local.get('transcript', data => {
-                    chrome.storage.local.set({ transcript: data.transcript + ' ' + transcript });
+        const FIVE_SECONDS = 5000;
 
-                    // Throws error when popup is closed, so this swallows the errors.
-                    chrome.runtime.sendMessage({ message: 'transcriptavailable' }).catch(err => {
-                        console.error('Message sending failed:', err);
-                    });
+    socket.onmessage = msg => {
+        const { transcript } = JSON.parse(msg.data).channel.alternatives[0];
+        if (transcript) {
+            const currentTime = Date.now();
+
+            chrome.storage.local.get('transcriptData', data => {
+                let transcriptData = data.transcriptData || [];
+
+                // Add the new transcript with the current timestamp
+                transcriptData.push({ text: transcript, timestamp: currentTime });
+
+                // Filter out transcripts older than 5 seconds
+                transcriptData = transcriptData.filter(item => currentTime - item.timestamp <= FIVE_SECONDS);
+
+                // Combine the filtered transcripts into a single string
+                const combinedTranscript = transcriptData.map(item => item.text).join(' ');
+
+                chrome.storage.local.set({ transcriptData, transcript: combinedTranscript });
+
+                // Throws error when popup is closed, so this swallows the errors.
+                chrome.runtime.sendMessage({ message: 'transcriptavailable' }).catch(err => {
+                    console.error('Message sending failed:', err);
                 });
-            }
-        };
-    });
+            });
+        }};
+});
 
-    chrome.runtime.onMessage.addListener(({ message }) => {
-        if (message === 'stop') {
-            if (socket) {
-                socket.close();
-                alert('Transcription ended');
-            }
-        }
-    });
+    // chrome.runtime.onMessage.addListener(({ message }) => {
+    //     if (message === 'stop') {
+    //         if (socket) {
+    //             socket.close();
+    //             alert('Transcription ended');
+    //         }
+    //     }
+    // });
 })();

@@ -13,16 +13,16 @@ document.getElementById('start').addEventListener('click', async function() {
     }
 })
 
-document.getElementById('stop').addEventListener('click', async () => {
+// document.getElementById('stop').addEventListener('click', async () => {
 
-    while (true) {
-        const tab = await getCurrentTab();
-        if (tab) {
-            chrome.tabs.sendMessage(tab.id, { message: 'stop' })
-            break;
-        }
-    }
-})
+//     while (true) {
+//         const tab = await getCurrentTab();
+//         if (tab) {
+//             chrome.tabs.sendMessage(tab.id, { message: 'stop' })
+//             break;
+//         }
+//     }
+// })
 
 document.getElementById('clear').addEventListener('click', async () => {
     chrome.storage.local.remove(['transcript'])
