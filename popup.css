@@ -16,15 +16,6 @@ body {
   background-position: center; /* This centers the image */
 }
 
-.transcript {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 .video-container {
   position: relative;
   width: 300px;

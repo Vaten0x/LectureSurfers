@@ -91,6 +91,13 @@ function playVideo(src) {
     videoElement.controls = true;
     videoElement.loop = true;  // Enable looping
 
+    const transcriptElement = document.getElementById("transcript");
+
+    transcriptElement.style.position = "abosolute";
+    transcriptElement.style.top = "0";
+    transcriptElement.style.left = "0";
+    transcriptElement.style.zIndex = "10000";
+
     videoElement.addEventListener('loadeddata', () => {
         videoElement.play().catch(error => {
             console.log("Play was prevented: ", error);
