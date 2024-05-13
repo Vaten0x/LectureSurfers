@@ -21,6 +21,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px; /* Add margin between the rows */
+  
 }
 .button-container button {
   margin: 0 10px; /* Space between the buttons */
