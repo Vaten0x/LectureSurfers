@@ -28,7 +28,10 @@ document.getElementById('start-subway').addEventListener('click', async function
             const tab = await getCurrentTab();
             if (tab) {
                 executeScriptBasedOnOption(tab.id);
-                playRandomVideo(['subway1.mp4', 'subway2.mp4', 'subway3.mp4']); //randomize the gameplays
+                playRandomVideo(['subway1.mp4', 
+                //'subway2.mp4', 
+                //'subway3.mp4'
+            ]); //randomize the gameplays
                 break;
             }
         }
@@ -98,6 +101,9 @@ function playVideo(src) {
     transcriptElement.style.left = "0";
     transcriptElement.style.zIndex = "10000";
     transcriptElement.style.display = "block"; 
+    transcriptElement.style.fontFamily = "Myriad pro Semibold";
+    transcriptElement.style.fontSize = "15px";
+    transcriptElement.style.color = "white";
 
     videoElement.addEventListener('loadeddata', () => {
         videoElement.play().catch(error => {
@@ -119,6 +125,19 @@ function stopVideo() {
     }
 }
 
+function stopTranscript() {
+    const transcriptElement = document.getElementById("transcript");
+    if (transcriptElement) {
+        transcriptElement.remove();
+    }
+}
+
+// externalPort.onDisconnect.addListener(function() {
+//     console.log("onDisconnect");
+//     stopVideo();
+//     stopTranscript();
+// });
+
 // document.getElementById('stop').addEventListener('click', async () => {
 //     while (true) {
 //         const tab = await getCurrentTab();
@@ -135,7 +154,7 @@ function stopVideo() {
 // })
 
 chrome.runtime.onMessage.addListener(({ message }) => {
-    if(message == 'transcriptavailable') {
+    if (message == 'transcriptavailable') {
         showLatestTranscript()
     }
 })

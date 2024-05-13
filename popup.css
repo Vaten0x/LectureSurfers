@@ -32,10 +32,6 @@ video {
   display: none;
 }
 
-.notHidden {
-  display: block;
-}
-
 .button-container {
   display: flex;
   justify-content: center;
