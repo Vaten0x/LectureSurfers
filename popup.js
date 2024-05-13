@@ -79,6 +79,8 @@ function playRandomVideo(videoList) {
     playVideo(`resources/${selectedVideo}`);
 }
 
+let transcriptLoaded = false;
+
 function playVideo(src) {
     const videoElement = document.createElement("video");
     videoElement.id = "backgroundVideo";
@@ -96,14 +98,23 @@ function playVideo(src) {
 
     const transcriptElement = document.getElementById("transcript");
 
-    transcriptElement.style.position = "abosolute";
-    transcriptElement.style.top = "0";
-    transcriptElement.style.left = "0";
-    transcriptElement.style.zIndex = "10000";
-    transcriptElement.style.display = "block"; 
-    transcriptElement.style.fontFamily = "Myriad pro Semibold";
-    transcriptElement.style.fontSize = "15px";
-    transcriptElement.style.color = "white";
+    if (!transcriptLoaded) {
+        chrome.storage.local.get("transcript", ({ transcript }) => {
+            transcriptElement.innerHTML = transcript;
+            transcriptElement.style.display = "block";  // Make transcript visible
+            transcriptElement.style.position = "abosolute";
+            transcriptElement.style.top = "0";
+            transcriptElement.style.left = "0";
+            transcriptElement.style.zIndex = "10000";
+            transcriptElement.style.fontFamily = "Myriad pro Semibold";
+            transcriptElement.style.fontSize = "15px";
+            transcriptElement.style.color = "white";
+            transcriptLoaded = true;  // Set the flag to true after loading
+        });
+    } else {
+        transcriptElement.style.display = (transcriptElement.style.display === "none") ? "block" : "none";
+    }
+
 
     videoElement.addEventListener('loadeddata', () => {
         videoElement.play().catch(error => {
@@ -180,7 +191,8 @@ function executeScriptBasedOnOption(tabId) {
     } else if (selectedOption === 'mic-audio') {
         scriptFile = 'content-speech.js';
     } else if (selectedOption === 'no-audio') {
-        //dont execute any script
+        stopVideo();
+        stopTranscript();
     }
 
     if (scriptFile) {
