@@ -4,3 +4,8 @@ chrome.runtime.onInstalled.addListener(details => {
       chrome.runtime.setUninstallURL("https://forms.gle/SA7shHbtMaFYczxv7");
   }
 });
+
+// Ensure to clear socket on tab close
+chrome.tabs.onRemoved.addListener((tabId) => {
+    delete sockets[tabId];
+});
