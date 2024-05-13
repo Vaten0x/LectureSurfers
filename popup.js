@@ -97,6 +97,7 @@ function playVideo(src) {
     transcriptElement.style.top = "0";
     transcriptElement.style.left = "0";
     transcriptElement.style.zIndex = "10000";
+    transcriptElement.style.display = "block"; 
 
     videoElement.addEventListener('loadeddata', () => {
         videoElement.play().catch(error => {
