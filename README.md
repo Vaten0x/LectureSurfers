@@ -1,5 +1,7 @@
 # LectureSurfer
 
+The videos in the resources folder are not in git due to a git size limit issue. They can be found at the following link: 
+
 
 Videos used for Subway Surfers Videos:
 https://www.youtube.com/watch?v=7ghSziUQnhs&t=770s
