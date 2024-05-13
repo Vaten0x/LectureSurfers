@@ -27,7 +27,7 @@ document.getElementById('start-subway').addEventListener('click', async function
         while (true) {
             const tab = await getCurrentTab();
             if (tab) {
-                //executeScriptBasedOnOption(tab.id);
+                executeScriptBasedOnOption(tab.id);
                 playRandomVideo(['subway1.mp4', 'subway2.mp4', 'subway3.mp4']); //randomize the gameplays
                 break;
             }
@@ -44,8 +44,11 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
         while (true) {
             const tab = await getCurrentTab();
             if (tab) {
-                //executeScriptBasedOnOption(tab.id);
-                playRandomVideo(['minecraft1.mp4', 'minecraft2.mp4', 'minecraft3.mp4']); //randomize the gameplays
+                executeScriptBasedOnOption(tab.id);
+                playRandomVideo([//'minecraft1.mp4', 
+                'minecraft2.mp4', 
+                //'minecraft3.mp4'
+                ]); //randomize the gameplays
                 break;
             }
         }
@@ -149,6 +152,8 @@ function executeScriptBasedOnOption(tabId) {
         scriptFile = 'content.js';
     } else if (selectedOption === 'mic-audio') {
         scriptFile = 'content-speech.js';
+    } else if (selectedOption === 'no-audio') {
+        //dont execute any script
     }
 
     if (scriptFile) {
