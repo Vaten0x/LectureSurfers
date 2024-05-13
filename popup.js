@@ -27,7 +27,8 @@ document.getElementById('start-subway').addEventListener('click', async function
         while (true) {
             const tab = await getCurrentTab();
             if (tab) {
-                executeScriptBasedOnOption(tab.id);
+                //executeScriptBasedOnOption(tab.id);
+                playRandomVideo(['subway1.mp4', 'subway2.mp4', 'subway3.mp4']); //randomize the gameplays
                 break;
             }
         }
@@ -43,12 +44,69 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
         while (true) {
             const tab = await getCurrentTab();
             if (tab) {
-                executeScriptBasedOnOption(tab.id);
+                //executeScriptBasedOnOption(tab.id);
+                playRandomVideo(['minecraft1.mp4', 'minecraft2.mp4', 'minecraft3.mp4']); //randomize the gameplays
                 break;
             }
         }
     }
 });
+
+let videoPort;
+
+chrome.runtime.onConnect.addListener(port => {
+    if (port.name === "videoControl") {
+        videoPort = port;
+        port.onMessage.addListener(msg => {
+            if (msg.action === "playVideo") {
+                playVideo(msg.src);
+            } else if (msg.action === "stopVideo") {
+                stopVideo();
+            }
+        });
+    }
+});
+
+function playRandomVideo(videoList) {
+    const randomIndex = Math.floor(Math.random() * videoList.length);
+    const selectedVideo = videoList[randomIndex];
+    playVideo(`resources/${selectedVideo}`);
+}
+
+function playVideo(src) {
+    const videoElement = document.createElement("video");
+    videoElement.id = "backgroundVideo";
+    videoElement.src = src;
+    videoElement.style.position = "fixed";
+    videoElement.style.top = "0";
+    videoElement.style.left = "0";
+    videoElement.style.width = "100%";
+    videoElement.style.height = "100%";
+    videoElement.style.zIndex = "9999";
+    videoElement.autoplay = true;
+    videoElement.muted = true;
+    videoElement.controls = true;
+    videoElement.loop = true;  // Enable looping
+
+    videoElement.addEventListener('loadeddata', () => {
+        videoElement.play().catch(error => {
+            console.log("Play was prevented: ", error);
+            document.addEventListener('click', () => {
+                videoElement.play();
+            }, { once: true });
+        });
+    });
+
+    document.body.appendChild(videoElement);
+}
+
+function stopVideo() {
+    const videoElement = document.getElementById("backgroundVideo");
+    if (videoElement) {
+        videoElement.pause();
+        videoElement.remove();
+    }
+}
 
 // document.getElementById('stop').addEventListener('click', async () => {
 //     while (true) {

@@ -82,8 +82,7 @@
     </div>
   </div> 
   <div class="container">
-    <h1>LectureSurfer</h1>
-    
+    <h1>LectureSurfer</h1>    
     <!-- These are the options for the background gameplay: -->
     <div class="button-container">
         <button id="start-subway">Subway Surfers</button> 
@@ -102,9 +101,16 @@
         <input type="radio" id="mic-audio" name="audio-option" value="mic-audio" class="option-input">
         <label for="mic-audio" class="option-label">Speech (Mic)</label>
     </div>
+    <div class="option-container">
+        <input type="radio" id="no-audio" name="audio-option" value="no-audio" class="option-input">
+        <label for="no-audio" class="option-label">No subtitle</label>
+    </div>
 
-    <p id="transcript"></p>
     <a href="https://forms.gle/2gNdC8Q7sEBv3kYu9" id="status" target="_blank" class="text-button">Suggestions?</a>
+
+    <video id="video" class="hidden" muted></video>
+    <p id="transcript" class="hidden"></p>
+    
     <script src="popup.js"></script>
   </div>
 </body>
