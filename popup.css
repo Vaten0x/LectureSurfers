@@ -16,6 +16,11 @@ body {
   background-position: center; /* This centers the image */
 }
 
+.stop {
+  top: 0;
+  left: 0;
+}
+
 .video-container {
   position: relative;
   width: 300px;

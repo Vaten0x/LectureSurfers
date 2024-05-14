@@ -2,6 +2,26 @@ showLatestTranscript()
 
 let selectedOption = localStorage.getItem('selectedOption');
 
+if (localStorage.getItem("beingShared") == true) {
+    //play the game
+    game = localStorage.getItem("game");
+    if (game == "subway") {
+        playRandomVideo(['subway1.mp4', 
+        //'subway2.mp4', 
+        //'subway3.mp4'
+        ]); //randomize the gameplays
+    } else if (game == "minecraft") {
+        playRandomVideo([//'minecraft1.mp4', 
+        'minecraft2.mp4', 
+        //'minecraft3.mp4'
+        ]); //randomize the gameplays
+    } else {
+        console.log("Game not found");
+    }
+
+    alert("Game is already being shared. Please click on the 'Stop' button to stop the game.");
+}
+
 if (selectedOption) {
     document.querySelector(`input[value="${selectedOption}"]`).checked = true;
 }
@@ -124,6 +144,16 @@ function playVideo(src) {
     videoElement.muted = true;
     videoElement.controls = true;
     videoElement.loop = true;  // Enable looping
+
+    const stopButton = document.createElement("button");
+    stopButton.innerHTML = "Stop";
+    stopButton.id = "stop";
+    stopButton.style.position = "fixed";
+    stopButton.style.top = "0";
+    stopButton.style.left = "0";
+    stopButton.style.zIndex = "10000";
+    stopButton.style.display = "block";
+    stopButton.style.border = "none";
 
     const transcriptElement = document.getElementById("transcript");
 

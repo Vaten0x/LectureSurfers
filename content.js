@@ -55,12 +55,12 @@
             }};
         });
 
-    // chrome.runtime.onMessage.addListener(({ message }) => {
-    //     if (message === 'stop') {
-    //         if (socket) {
-    //             socket.close();
-    //             alert('Transcription ended');
-    //         }
-    //     }
-    // });
+    chrome.runtime.onMessage.addListener(({ message }) => {
+        if (message === 'stop') {
+            if (socket) {
+                socket.close();
+                alert('Transcription ended');
+            }
+        }
+    });
 })();
