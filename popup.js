@@ -21,7 +21,7 @@ document.querySelectorAll('input[name="audio-option"]').forEach((elem) => {
 document.getElementById('start-subway').addEventListener('click', async function() {
     if (!isOptionSelected()) {
         alert('Please select an audio option before starting the game.');
-    } else {
+    } else if (localStorage.getItem("beingShared") == null || localStorage.getItem("beingShared") == false) {
         console.log('Subway Surfers button clicked');
         
         while (true) {
@@ -31,17 +31,34 @@ document.getElementById('start-subway').addEventListener('click', async function
                 playRandomVideo(['subway1.mp4', 
                 //'subway2.mp4', 
                 //'subway3.mp4'
-            ]); //randomize the gameplays
+                ]); //randomize the gameplays
+                localStorage.setItem("beingShared", true);
+                localStorage.setItem("game", "subway");
                 break;
             }
         }
+    } else {
+        playRandomVideo(['subway1.mp4', 
+        //'subway2.mp4', 
+        //'subway3.mp4'
+        ]); //randomize the gameplays
+
+        //print the localStorage value
+        console.log(localStorage.getItem("beingShared"));
     }
+});
+
+// Ensure to clear socket on tab close
+chrome.tabs.onRemoved.addListener(() => {
+    //empty the transcript
+    chrome.storage.local.set({ transcript: '' });
+    localStorage.clear();
 });
 
 document.getElementById('start-minecraft').addEventListener('click', async function() {
     if (!isOptionSelected()) {
         alert('Please select an audio option before starting the game.');
-    } else {
+    } else if (localStorage.getItem("beingShared") == null || localStorage.getItem("beingShared") == false) {
         console.log('Minecraft Parkour button clicked');
         
         while (true) {
@@ -52,9 +69,19 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
                 'minecraft2.mp4', 
                 //'minecraft3.mp4'
                 ]); //randomize the gameplays
+                localStorage.setItem("beingShared", true);
+                localStorage.setItem("game", "minecraft");
                 break;
             }
         }
+    } else {
+        playRandomVideo([//'minecraft1.mp4', 
+        'minecraft2.mp4', 
+        //'minecraft3.mp4'
+        ]); //randomize the gameplays
+
+        //print the localStorage value
+        console.log(localStorage.getItem("beingShared"));
     }
 });
 
@@ -114,7 +141,6 @@ function playVideo(src) {
     } else {
         transcriptElement.style.display = (transcriptElement.style.display === "none") ? "block" : "none";
     }
-
 
     videoElement.addEventListener('loadeddata', () => {
         videoElement.play().catch(error => {
