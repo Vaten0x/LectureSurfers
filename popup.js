@@ -52,6 +52,8 @@ document.getElementById('start-subway').addEventListener('click', async function
 chrome.tabs.onRemoved.addListener(() => {
     //empty the transcript
     chrome.storage.local.set({ transcript: '' });
+
+    //clear the localStorage, so that another option can be chosen again!
     localStorage.clear();
 });
 
