@@ -2,25 +2,31 @@ showLatestTranscript()
 
 let selectedOption = localStorage.getItem('selectedOption');
 
-if (localStorage.getItem("beingShared") == true) {
-    //play the game
-    game = localStorage.getItem("game");
-    if (game == "subway") {
-        playRandomVideo(['subway1.mp4', 
-        //'subway2.mp4', 
-        //'subway3.mp4'
-        ]); //randomize the gameplays
-    } else if (game == "minecraft") {
-        playRandomVideo([//'minecraft1.mp4', 
-        'minecraft2.mp4', 
-        //'minecraft3.mp4'
-        ]); //randomize the gameplays
-    } else {
-        console.log("Game not found");
+window.onload = function() {
+    // Check if a game is being shared
+    if (localStorage.getItem("beingShared") === "true") {
+        // Retrieve the game type from localStorage
+        let game = localStorage.getItem("game");
+        // Play the appropriate video based on the game type
+        if (game === "subway") {
+            playRandomVideo(['subway1.mp4']);
+        } else if (game === "minecraft") {
+            playRandomVideo(['minecraft2.mp4']);
+        } else {
+            console.log("Game not found");
+        }
+
+        // Alert the user that the game is already being shared
+        alert("Game is already being shared. Please click on the 'Stop' button to stop the game.");
     }
 
-    alert("Game is already being shared. Please click on the 'Stop' button to stop the game.");
-}
+    // Retrieve the selected audio option from localStorage
+    let selectedOption = localStorage.getItem('selectedOption');
+    if (selectedOption) {
+        // Check the corresponding radio button
+        document.querySelector(`input[value="${selectedOption}"]`).checked = true;
+    }
+};
 
 if (selectedOption) {
     document.querySelector(`input[value="${selectedOption}"]`).checked = true;
