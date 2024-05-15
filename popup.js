@@ -9,15 +9,21 @@ window.onload = function() {
         let game = localStorage.getItem("game");
         // Play the appropriate video based on the game type
         if (game === "subway") {
-            playRandomVideo(['subway1.mp4']);
+            playRandomVideo(['subway1.mp4', 
+            //'subway2.mp4', 
+            //'subway3.mp4'
+            ]); //randomize the gameplays
         } else if (game === "minecraft") {
-            playRandomVideo(['minecraft2.mp4']);
+            playRandomVideo([//'minecraft1.mp4', 
+            'minecraft2.mp4', 
+            //'minecraft3.mp4'
+            ]); //randomize the gameplays
         } else {
             console.log("Game not found");
         }
 
         // Alert the user that the game is already being shared
-        alert("Game is already being shared. Please click on the 'Stop' button to stop the game.");
+        //alert("Game is already being shared. Please click on the 'Stop' button to stop the game.");
     }
 
     // Retrieve the selected audio option from localStorage
@@ -47,7 +53,7 @@ document.querySelectorAll('input[name="audio-option"]').forEach((elem) => {
 document.getElementById('start-subway').addEventListener('click', async function() {
     if (!isOptionSelected()) {
         alert('Please select an audio option before starting the game.');
-    } else if (localStorage.getItem("beingShared") == null || localStorage.getItem("beingShared") == false) {
+    } else if (localStorage.getItem("beingShared") == null || localStorage.getItem("beingShared") == "false") {
         console.log('Subway Surfers button clicked');
         
         while (true) {
@@ -58,7 +64,7 @@ document.getElementById('start-subway').addEventListener('click', async function
                 //'subway2.mp4', 
                 //'subway3.mp4'
                 ]); //randomize the gameplays
-                localStorage.setItem("beingShared", true);
+                localStorage.setItem("beingShared", "true");
                 localStorage.setItem("game", "subway");
                 break;
             }
@@ -86,7 +92,7 @@ chrome.tabs.onRemoved.addListener(() => {
 document.getElementById('start-minecraft').addEventListener('click', async function() {
     if (!isOptionSelected()) {
         alert('Please select an audio option before starting the game.');
-    } else if (localStorage.getItem("beingShared") == null || localStorage.getItem("beingShared") == false) {
+    } else if (localStorage.getItem("beingShared") == null || localStorage.getItem("beingShared") == "false") {
         console.log('Minecraft Parkour button clicked');
         
         while (true) {
@@ -97,7 +103,7 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
                 'minecraft2.mp4', 
                 //'minecraft3.mp4'
                 ]); //randomize the gameplays
-                localStorage.setItem("beingShared", true);
+                localStorage.setItem("beingShared", "true");
                 localStorage.setItem("game", "minecraft");
                 break;
             }
@@ -151,23 +157,12 @@ function playVideo(src) {
     videoElement.controls = true;
     videoElement.loop = true;  // Enable looping
 
-    const stopButton = document.createElement("button");
-    stopButton.innerHTML = "Stop";
-    stopButton.id = "stop";
-    stopButton.style.position = "fixed";
-    stopButton.style.top = "0";
-    stopButton.style.left = "0";
-    stopButton.style.zIndex = "10000";
-    stopButton.style.display = "block";
-    stopButton.style.border = "none";
-
     const transcriptElement = document.getElementById("transcript");
 
-    if (!transcriptLoaded) {
+    if (!transcriptLoaded && transcriptElement) {
         chrome.storage.local.get("transcript", ({ transcript }) => {
             transcriptElement.innerHTML = transcript;
             transcriptElement.style.display = "block";  // Make transcript visible
-            transcriptElement.style.position = "abosolute";
             transcriptElement.style.top = "0";
             transcriptElement.style.left = "0";
             transcriptElement.style.zIndex = "10000";
@@ -180,6 +175,26 @@ function playVideo(src) {
         transcriptElement.style.display = (transcriptElement.style.display === "none") ? "block" : "none";
     }
 
+    const stopButton = document.createElement("button");
+    stopButton.innerHTML = "Stop";
+    stopButton.style.position = "absolute";
+    stopButton.style.top = "5px";
+    stopButton.style.left = "5px";
+    stopButton.style.zIndex = "10000";  // Higher zIndex than the video
+    stopButton.style.display = "block";
+    stopButton.style.border = "none";
+    stopButton.style.padding = "6px";
+    stopButton.style.fontSize = "12px";
+    stopButton.style.fontFamily = "Myriad pro Semibold";
+    stopButton.onclick = () => {
+        stopVideo();
+        stopButton.remove();
+        stopTranscript();
+        localStorage.setItem("beingShared", "false");
+        transcriptLoaded = false;
+        chrome.runtime.reload()
+    };
+
     videoElement.addEventListener('loadeddata', () => {
         videoElement.play().catch(error => {
             console.log("Play was prevented: ", error);
@@ -190,6 +205,7 @@ function playVideo(src) {
     });
 
     document.body.appendChild(videoElement);
+    document.body.appendChild(stopButton);
 }
 
 function stopVideo() {
@@ -255,8 +271,8 @@ function executeScriptBasedOnOption(tabId) {
     } else if (selectedOption === 'mic-audio') {
         scriptFile = 'content-speech.js';
     } else if (selectedOption === 'no-audio') {
-        stopVideo();
-        stopTranscript();
+        //clear transcript
+        chrome.storage.local.set({ transcript: '' });
     }
 
     if (scriptFile) {
