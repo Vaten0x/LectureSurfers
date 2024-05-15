@@ -45,6 +45,8 @@ For more information, support, or feedback, please visit my [portfolio](https://
 
 Happy Surfing! 🌊
 
+---
+
 The videos in the resources folder are not in git due to a git size limit issue. They can be found at the following link: 
 https://drive.google.com/file/d/1s2mAXgsoC-wr3erMMbLWF0pf-2x70BL1/view?usp=sharing
 
