@@ -1,4 +1,4 @@
-# LectureSurfers 🌊
+# LectureSurfers -> [Try it out!](https://vaten0x.github.io/react-portfolio/) 🌊
 
 ## Overview
 
@@ -41,7 +41,7 @@ Welcome to **LectureSurfers**! This Google Chrome extension is designed to enhan
 
 ---
 
-For more information, support, or feedback, please visit my [portfolio](https://vaten0x.github.io/react-portfolio/) or contact us at [support@lecturesurfers.com](). 
+For more information, support, or feedback, please visit my [portfolio](https://vaten0x.github.io/react-portfolio/) or contact me at [jason0409lee@gmail.com](jason0409lee@gmail.com). 
 
 Happy Surfing! 🌊
 
