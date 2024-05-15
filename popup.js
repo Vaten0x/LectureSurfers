@@ -10,13 +10,13 @@ window.onload = function() {
         // Play the appropriate video based on the game type
         if (game === "subway") {
             playRandomVideo(['subway1.mp4', 
-            //'subway2.mp4', 
-            //'subway3.mp4'
+            'subway2.mp4', 
+            'subway3.mp4'
             ]); //randomize the gameplays
         } else if (game === "minecraft") {
-            playRandomVideo([//'minecraft1.mp4', 
+            playRandomVideo(['minecraft1.mp4', 
             'minecraft2.mp4', 
-            //'minecraft3.mp4'
+            'minecraft3.mp4'
             ]); //randomize the gameplays
         } else {
             console.log("Game not found");
@@ -61,8 +61,8 @@ document.getElementById('start-subway').addEventListener('click', async function
             if (tab) {
                 executeScriptBasedOnOption(tab.id);
                 playRandomVideo(['subway1.mp4', 
-                //'subway2.mp4', 
-                //'subway3.mp4'
+                'subway2.mp4', 
+                'subway3.mp4'
                 ]); //randomize the gameplays
                 localStorage.setItem("beingShared", "true");
                 localStorage.setItem("game", "subway");
@@ -71,8 +71,8 @@ document.getElementById('start-subway').addEventListener('click', async function
         }
     } else {
         playRandomVideo(['subway1.mp4', 
-        //'subway2.mp4', 
-        //'subway3.mp4'
+        'subway2.mp4', 
+        'subway3.mp4'
         ]); //randomize the gameplays
 
         //print the localStorage value
@@ -99,9 +99,9 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
             const tab = await getCurrentTab();
             if (tab) {
                 executeScriptBasedOnOption(tab.id);
-                playRandomVideo([//'minecraft1.mp4', 
+                playRandomVideo(['minecraft1.mp4', 
                 'minecraft2.mp4', 
-                //'minecraft3.mp4'
+                'minecraft3.mp4'
                 ]); //randomize the gameplays
                 localStorage.setItem("beingShared", "true");
                 localStorage.setItem("game", "minecraft");
@@ -109,9 +109,9 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
             }
         }
     } else {
-        playRandomVideo([//'minecraft1.mp4', 
+        playRandomVideo(['minecraft1.mp4', 
         'minecraft2.mp4', 
-        //'minecraft3.mp4'
+        'minecraft3.mp4'
         ]); //randomize the gameplays
 
         //print the localStorage value
