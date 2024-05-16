@@ -1,10 +1,10 @@
 {
-    "name": "LectureSurfer",
+    "name": "LectureSurfers",
     "version": "1.0",
     "manifest_version": 3,
     "permissions": ["storage", "tabs", "activeTab", "scripting"],
     "update_url":"https://clients2.google.com/service/update2/crx",
-    "description": "LectureSurfer is a tool for students to listen to lectures with a background of their choice that helps them focus.",
+    "description": "LectureSurfers is a tool for students to listen to lectures with a background of their choice that helps them focus.",
     "action": {
         "default_popup": "popup.html",
         "default_title": "LectureSurfer",
