@@ -1,4 +1,4 @@
-# LectureSurfers -> [Try it out!](https://vaten0x.github.io/react-portfolio/) 🌊
+# LectureSurfers -> [Try it out!](https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko) 🌊
 
 ## Overview
 
