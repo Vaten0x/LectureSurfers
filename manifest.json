@@ -27,7 +27,7 @@
     },
     "web_accessible_resources": [
         {
-            "resources": ["images/backgroundImg.jpg", "resources/minecraft.mp4"],
+            "resources": ["images/backgroundImg.jpg"],
             "matches": ["<all_urls>"]
         }
     ]
