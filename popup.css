@@ -160,7 +160,7 @@ button:active {
 }
 
 .option-container label input:checked + span:before {
-  box-shadow: inset 0 0 0 0.4375em #0257b5;
+  box-shadow: inset 0 0 0 0.4375em #045bba;
 }
 
 .option-container label span {
