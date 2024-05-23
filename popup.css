@@ -1,7 +1,6 @@
 body {
   display: flex;
-  flex-direction: row;
-  font-family: "Cute Font", cursive;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   transform-style: preserve-3d;
@@ -10,11 +9,38 @@ body {
   align-items: center;
   width: 300px;
   height: 600px;
-  background-image: url('images/backgroundImg.jpg');
-  background-size: cover; /* This will ensure the image covers the entire background */
-  background-repeat: no-repeat; /* This prevents the image from repeating */
-  background-position: center; /* This centers the image */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  top: 101px;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/* ------ For videos over here ------ */
 
 .stop {
   color: #fff;
@@ -42,28 +68,130 @@ video {
   display: none;
 }
 
+/* ------ For the buttons ------ */
+
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px; /* Add margin between the rows */
-  
+  margin-bottom: 13px;
 }
+
 .button-container button {
-  margin: 0 10px; /* Space between the buttons */
+  margin: 0 10px;
 }
+
+button {
+  background-color: #34baff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+
+button:hover::before {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+}
+
+button:hover {
+  background-color: #0276f5;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ------ For the options ------ */
 
 .option-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 1em;
 }
 
 .option-label {
   cursor: pointer;
   margin: 0 10px; /* Space between the options */
 }
+
+.option-container label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-container label input {
+  position: absolute;
+  left: -9999px;
+}
+
+.option-container label input:checked + span {
+  background-color: #0276f5;
+  color: white;
+}
+
+.option-container label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #0257b5;
+}
+
+.option-container label span {
+  display: flex;
+  align-items: center;
+  padding: 0.25em 0.75em; /* Reduced top and bottom padding */
+  border-radius: 99em;
+  transition: 0.25s ease;
+  color: #000000;
+}
+
+.option-container label span:hover {
+  background-color: #d6d6e5;
+}
+
+.option-container label span:before {
+  position: static;
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #000000;
+}
+
+
+/* ------ For the skateboard and rest ------ */
 
 .wrapper {
   width: 150px;
@@ -89,35 +217,6 @@ video {
   height: 300px;
   z-index: 10;
   border-radius: 10px;
-}
-
-.container {
-  background-color: #9feefc;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  top: 101px;
-}
-
-h1 {
-  font-size: 2.2em;
-  margin-bottom: 20px;
-  color: #000000;
-}
-
-button {
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
 
 #status {
