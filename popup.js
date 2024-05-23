@@ -70,9 +70,10 @@ document.getElementById('start-subway').addEventListener('click', async function
             }
         }
     } else {
-        playRandomVideo(['subway1.mp4', 
-        'subway2.mp4', 
-        'subway3.mp4'
+        playRandomVideo([
+        'subway1.mp4', 
+        //'subway2.mp4', 
+        //'subway3.mp4'
         ]); //randomize the gameplays
 
         //print the localStorage value
@@ -99,9 +100,10 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
             const tab = await getCurrentTab();
             if (tab) {
                 executeScriptBasedOnOption(tab.id);
-                playRandomVideo(['minecraft1.mp4', 
+                playRandomVideo([
+                //'minecraft1.mp4', 
                 'minecraft2.mp4', 
-                'minecraft3.mp4'
+                //'minecraft3.mp4'
                 ]); //randomize the gameplays
                 localStorage.setItem("beingShared", "true");
                 localStorage.setItem("game", "minecraft");

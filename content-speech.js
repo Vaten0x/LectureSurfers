@@ -21,7 +21,7 @@
 
         socket.onopen = () => { recorder.start(250); };
 
-        const FIVE_SECONDS = 5000;
+        const TIMER = 3000;
 
         socket.onmessage = msg => {
             const { transcript } = JSON.parse(msg.data).channel.alternatives[0];
@@ -34,8 +34,8 @@
                     // Add the new transcript with the current timestamp
                     transcriptData.push({ text: transcript, timestamp: currentTime });
 
-                    // Filter out transcripts older than 5 seconds
-                    transcriptData = transcriptData.filter(item => currentTime - item.timestamp <= FIVE_SECONDS);
+                    // Filter out transcripts older than 3 seconds
+                    transcriptData = transcriptData.filter(item => currentTime - item.timestamp <= TIMER);
 
                     // Combine the filtered transcripts into a single string
                     const combinedTranscript = transcriptData.map(item => item.text).join(' ');
