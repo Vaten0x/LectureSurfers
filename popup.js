@@ -102,7 +102,7 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
                 executeScriptBasedOnOption(tab.id);
                 playRandomVideo([
                 //'minecraft1.mp4', 
-                'minecraft2.mp4', 
+                'https://lecturesurfers-videos.s3.us-west-1.amazonaws.com/sample.mp4', 
                 //'minecraft3.mp4'
                 ]); //randomize the gameplays
                 localStorage.setItem("beingShared", "true");
@@ -112,7 +112,7 @@ document.getElementById('start-minecraft').addEventListener('click', async funct
         }
     } else {
         playRandomVideo(['minecraft1.mp4', 
-        'minecraft2.mp4', 
+        'https://lecturesurfers-videos.s3.us-west-1.amazonaws.com/sample.mp4.mp4', 
         'minecraft3.mp4'
         ]); //randomize the gameplays
 
