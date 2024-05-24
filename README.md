@@ -1,4 +1,4 @@
-# LectureSurfers -> [Try it out!](https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko) 🌊
+# [LectureSurfers](https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko) 🌊
 
 ## Overview
 
