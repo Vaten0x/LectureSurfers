@@ -1,6 +1,6 @@
 {
     "name": "LectureSurfers",
-    "version": "1.0",
+    "version": "2.0.0",
     "manifest_version": 3,
     "permissions": ["storage", "activeTab", "scripting"],
     "update_url":"https://clients2.google.com/service/update2/crx",
