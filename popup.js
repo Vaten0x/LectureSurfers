@@ -14,9 +14,9 @@ window.onload = function() {
             'subway3.mp4'
             ]); //randomize the gameplays
         } else if (game === "minecraft") {
-            playRandomVideo(['minecraft1.mp4', 
-            'minecraft2.mp4', 
-            'minecraft3.mp4'
+            playRandomVideo([//'minecraft1.mp4', 
+            'https://lecturesurfers-videos.s3.us-west-1.amazonaws.com/sample.mp4', 
+            //'minecraft3.mp4'
             ]); //randomize the gameplays
         } else {
             console.log("Game not found");
@@ -139,7 +139,7 @@ chrome.runtime.onConnect.addListener(port => {
 function playRandomVideo(videoList) {
     const randomIndex = Math.floor(Math.random() * videoList.length);
     const selectedVideo = videoList[randomIndex];
-    playVideo(`resources/${selectedVideo}`);
+    playVideo(selectedVideo);
 }
 
 let transcriptLoaded = false;

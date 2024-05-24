@@ -27,7 +27,8 @@
     },
     "web_accessible_resources": [
         {
-            "matches": ["<all_urls>"]
+            "matches": ["<all_urls>"],
+            "resources": ["https://lecturesurfers-videos.s3.us-west-1.amazonaws.com/*"]
         }
     ]
 }
