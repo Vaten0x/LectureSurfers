@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 <p align="center">
   <img src="/images/icon128.png" width="128px" height="128px" alt="LectureSurfers logo">
 </p>
@@ -52,19 +54,25 @@ Welcome to **LectureSurfers**! This Google Chrome extension is designed to enhan
 3. **Configure Settings**: Choose your preferred gameplay and audio input settings.
 4. **Enjoy Your Lectures**: Start your lecture and let LectureSurfers enhance your learning experience!
 
+## 📑 License
+Licensed under [MIT](https://github.com/Vaten0x/LectureSurfers/blob/main/LICENSE).
+
 ---
 
 For more information, support, or feedback, please visit my [portfolio](https://vaten0x.github.io/react-portfolio/) or contact me at [jason0409lee@gmail.com](jason0409lee@gmail.com). 
 
 Happy Surfing! 🌊
 
+<div align="right">
+
+[![][back-to-top]](#readme-top)
+
+</div>
+
+<!-- LINK GROUP -->
+[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
+
 <!-- SHIELDS GROUP -->
-
-[![][extension-rating-shield]][extension-rating-link]
-[![][latest-version-shield]][latest-version-link]<br/>
-[![][github-stars-shield]][github-stars-link]
-[![][github-license-shield]][github-license-link]<br/>
-
 [chrome-users-shield]: https://img.shields.io/chrome-web-store/users/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&logo=googlechrome&logoColor=white&label=chrome%20active%20users&labelColor=black&color=33bcff
 [chrome-users-link]: https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko
 [extension-rating-shield]: https://img.shields.io/chrome-web-store/rating/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&color=33bcff
