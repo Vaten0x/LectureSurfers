@@ -15,11 +15,11 @@
 
 </div>
 
-## Overview
+## 🌊 Overview
 
 Welcome to **LectureSurfers**! This Google Chrome extension is designed to enhance your attention span during lectures by adding engaging gameplay to your browser tab. Whether you’re a fan of Minecraft Parkour or Subway Surfers, this extension allows you to watch gameplay with or without subtitles to help you focus better on your lectures.
 
-## Features
+## 🚀 Features
 
 ### 1. Gameplay with Subtitles
 - **Minecraft Parkour or Subway Surfers**: Choose between these two popular games to run alongside your lecture.
@@ -31,7 +31,7 @@ Welcome to **LectureSurfers**! This Google Chrome extension is designed to enhan
 ### 2. Gameplay without Subtitles
 - **Clean Gameplay**: Enjoy the same engaging gameplay without the distraction of subtitles. Great for those who prefer a cleaner screen without text overlays.
 
-## How It Works
+## 🛹 How It Works
 
 1. **Install the Extension**: Add LectureSurfers to your Google Chrome browser from the Chrome Web Store.
 2. **Select Your Gameplay**: Choose between Minecraft Parkour or Subway Surfers.
@@ -41,13 +41,13 @@ Welcome to **LectureSurfers**! This Google Chrome extension is designed to enhan
    - **No Subtitles**: Opt for this if you prefer gameplay without subtitles.
 4. **Start Your Lecture**: Begin your lecture and enjoy the gameplay to help keep your attention focused.
 
-## Benefits
+## 📚 Benefits
 
 - **Enhanced Focus**: Engaging gameplay can help maintain your attention during lectures, especially during long or monotonous sessions.
 - **Versatile Use**: Whether you’re attending online classes, watching recorded lectures, or sitting in a classroom, LectureSurfers adapts to your needs.
 - **User-Friendly**: Easy to install and use, with intuitive controls for switching between gameplay and audio input options.
 
-## Getting Started
+## 🌟 Getting Started
 
 1. **Download and Install**: Head over to the Chrome Web Store and download LectureSurfers.
 2. **Open the Extension**: Click on the LectureSurfers icon in your Chrome toolbar.
