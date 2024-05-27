@@ -1,4 +1,7 @@
-# [LectureSurfers](https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko) 🌊
+<p align="center">
+  <img src="/images/icon128.png" width="128px" height="128px" alt="LectureSurfers logo">
+</p>
+<h1 align="center">Lecture Surfers</h1>
 
 ## Overview
 
