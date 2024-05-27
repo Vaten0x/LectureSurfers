@@ -73,11 +73,11 @@ Happy Surfing! 🌊
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
 
 <!-- SHIELDS GROUP -->
-[chrome-users-shield]: https://img.shields.io/chrome-web-store/users/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&logo=googlechrome&logoColor=white&label=chrome%20active%20users&labelColor=black&color=33bcff
+[chrome-users-shield]: https://img.shields.io/chrome-web-store/users/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&logo=googlechrome&logoColor=white&label=chrome%20active%20users&color=33bcff
 [chrome-users-link]: https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko
 [extension-rating-shield]: https://img.shields.io/chrome-web-store/rating/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&color=33bcff
 [extension-rating-link]: https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko
-[latest-version-shield]: https://img.shields.io/chrome-web-store/v/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&label=latest%20version&labelColor=black&color=33bcff
+[latest-version-shield]: https://img.shields.io/chrome-web-store/v/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&label=latest%20version&color=33bcff
 [latest-version-link]: https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko
 [github-stars-shield]: https://img.shields.io/github/stars/Vaten0x/LectureSurfers?style=flat-square&color=33bcff
 [github-stars-link]: https://github.com/Vaten0x/LectureSurfers
