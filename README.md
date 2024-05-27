@@ -3,6 +3,16 @@
 </p>
 <h1 align="center">Lecture Surfers</h1>
 
+<div align="center">
+
+[![][chrome-users-shield]][chrome-users-link]
+[![][extension-rating-shield]][extension-rating-link]
+[![][latest-version-shield]][latest-version-link]
+[![][github-stars-shield]][github-stars-link]
+[![][github-license-shield]][github-license-link]
+
+</div>
+
 ## Overview
 
 Welcome to **LectureSurfers**! This Google Chrome extension is designed to enhance your attention span during lectures by adding engaging gameplay to your browser tab. Whether you’re a fan of Minecraft Parkour or Subway Surfers, this extension allows you to watch gameplay with or without subtitles to help you focus better on your lectures.
@@ -47,3 +57,21 @@ Welcome to **LectureSurfers**! This Google Chrome extension is designed to enhan
 For more information, support, or feedback, please visit my [portfolio](https://vaten0x.github.io/react-portfolio/) or contact me at [jason0409lee@gmail.com](jason0409lee@gmail.com). 
 
 Happy Surfing! 🌊
+
+<!-- SHIELDS GROUP -->
+
+[![][extension-rating-shield]][extension-rating-link]
+[![][latest-version-shield]][latest-version-link]<br/>
+[![][github-stars-shield]][github-stars-link]
+[![][github-license-shield]][github-license-link]<br/>
+
+[chrome-users-shield]: https://img.shields.io/chrome-web-store/users/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&logo=googlechrome&logoColor=white&label=chrome%20active%20users&labelColor=black&color=33bcff
+[chrome-users-link]: https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko
+[extension-rating-shield]: https://img.shields.io/chrome-web-store/rating/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&color=33bcff
+[extension-rating-link]: https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko
+[latest-version-shield]: https://img.shields.io/chrome-web-store/v/gpenhfhlcpemdkjacaompcedbcknjiko?style=flat-square&label=latest%20version&labelColor=black&color=33bcff
+[latest-version-link]: https://chromewebstore.google.com/detail/lecturesurfers/gpenhfhlcpemdkjacaompcedbcknjiko
+[github-stars-shield]: https://img.shields.io/github/stars/Vaten0x/LectureSurfers?style=flat-square&color=33bcff
+[github-stars-link]: https://github.com/Vaten0x/LectureSurfers
+[github-license-shield]: https://img.shields.io/github/license/Vaten0x/LectureSurfers?style=flat-square&color=33bcff
+[github-license-link]: https://github.com/Vaten0x/LectureSurfers/issues
